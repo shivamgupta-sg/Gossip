@@ -27,7 +27,7 @@ docker run -it --name javaserver --mount source=servervol,target=/server/serverd
 Run Server Container to go in container shell (not running the application by default)
 
 ```
-docker run -it --name javaserver --mount source=servervol,target=/server/serverdata --network javabridge --ip 172.10.0.12 javaserver:test /bin/bash
+docker run -it --name javaserver --mount source=servervol,target=/server/serverdata --network javabridge javaserver:test /bin/bash
 ```
 
 ### Client
