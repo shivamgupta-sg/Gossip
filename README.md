@@ -30,6 +30,11 @@ Run Server Container to go in container shell (not running the application by de
 docker run -it --name javaserver --mount source=servervol,target=/server/serverdata --network javabridge --ip 172.10.0.12 javaserver:test /bin/bash
 ```
 
+Or to go in the running container
+```
+docker exec -it javaserver /bin/bash
+```
+
 ### Client
 
 Create the client volume
@@ -48,6 +53,11 @@ Run Client Container to go in container shell (not running the application by de
 
 ```
 docker run -it --name javaclient --mount source=clientvol,target=/client/clientdata --network javabridge javaclient:test /bin/bash
+```
+
+Or to go in the running container
+```
+docker exec -it javaclient /bin/bash
 ```
 
 Used volumes as the mount in the server and client. The volume will mount to a particular point(/server/serverdata and /client/clientdata for server and client respectively) on the container and the history of the conversation (conversation.txt) will be saved in the volume.
